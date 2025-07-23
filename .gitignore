@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+*.swp
+*.swo
+
+*.env
+
+projeto-ci-cd-fastapi-manifests/
+
+68150693
+68150693.pub
