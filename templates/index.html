@@ -1,29 +1,126 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>FastAPI Deploy</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: #121212;
-            color: #fff;
-            text-align: center;
-            padding-top: 100px;
-        }
-        h1 {
-            font-size: 3em;
-            color: #00d1b2;
-        }
-        p {
-            font-size: 1.2em;
-            color: #ccc;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FastAPI</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(190deg, #0213101a 5%, #6bf0e2 50%);
+      color: #eee;
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #00d1b2;
+    }
+    .container {
+      max-width: 995px;
+      margin: 0 auto;
+      background: #1e1e1e;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.7);
+    }
+    .services {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 2rem;
+      gap: 1.5rem;
+    }
+    .service {
+      flex: 1 1 150px;
+      background: #1d2025;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 0 8px #00d1b2;
+      transition: transform 0.3s ease;
+    }
+    .service:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 15px #00d1b2;
+    }
+    .service img {
+      max-width: 80px;
+      margin-bottom: 0.5rem;
+    }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-    <h1>Deploy com FastAPI + Kubernetes</h1>
-    <p>Aplicação rodando com CI/CD automático via GitHub Actions e ArgoCD.</p>
+  <div class="container">
+    <h1>Bem-Vindo(a) ao FastApi</h1>
+    <h2>Vamos entender um pouco como foi feito para rodar está aplicação</h2>
+    <p>
+      Esta aplicação foi projetada para ser executada automaticamente em um cluster Kubernetes, junto com algumas tecnologias importantes necessárias para o desenvolvimento, deploy e monitoramento:
+    </p>
+    <h3> Tecnologias ultilizadas na projeção da aplicação</h3>
+    <ul>
+        <li>
+           <p><b>Ubuntu:</b> Distribuição Ubuntu(linux) no windows para executar os comandos</p> 
+        </li>
+        <li>
+            <p><b>GitHub Actions:</b> Automatização com o build da imagem Docker, faz push para o Docker Hub e atualiza o repositório de manifests Kubernetes.</p>
+        </li>
+        <li>
+           <p> <b>Rancher Desktop:</b> Plataforma para gerenciar o cluster Kubernetes.</p>
+        </li>
+        <li>
+           <p><b>Repositório de manifests:</b> Contém os arquivos YAML para deploy no Kubernetes (deployment e service).</p> 
+        </li>
+        <li>
+            <p></p><b>ArgoCD:</b> Monitora o repositório de manifests e sincroniza o estado desejado para o cluster Kubernetes.
+        </li>
+        <li>
+            <p><b>FastAPI:</b> Framework web usado para criar a aplicação que serve páginas HTML dinâmicas.</p>
+        </li>
+        <li>
+           <p> <b>DockerHub:</b> Armazena e distribui as imagens Docker geradas.</p>
+        </li>
+        
+    </ul>
+    </ul>
+    <div class="services">
+        <div class="service">
+            <img src="https://assets.ubuntu.com/v1/29985a98-ubuntu-logo32.png" alt="Ubuntu">
+            <h3>Ubuntu</h3>
+        </div>
+        <div class="service">
+            <img src="https://www.svgrepo.com/show/354256/rancher-icon.svg" alt="Rancher Logo"/>
+            <h3>Rancher Desktop</h3>
+        </div>
+        <div class="service">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg" alt="Kubernetes Logo" />
+            <h3>Kubernetes</h3>
+        </div>
+        <div class="service">
+            <img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png" alt="Docker Logo" />
+        <h3>DockerHub</h3>
+        </div>
+        <div class="service">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" />
+            <h3>GitHub Actions</h3>
+        </div>
+        <div class="service">
+            <img src="https://icon.icepanel.io/Technology/svg/Argo-CD.svg" alt="ArgoCD Logo" />
+            <h3>ArgoCD</h3>
+        </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Sabrina Souza - Aplicação FastAPI com GitOps
+  </footer>
 </body>
 </html>
 
