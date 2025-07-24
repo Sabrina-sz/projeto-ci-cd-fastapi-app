@@ -1,4 +1,4 @@
-# Projeto FastAPI com CI/CD e GitOps
+<h1 align="center"> Projeto FastAPI com CI/CD e GitOps</h1>
 
 Este projeto tem como objetivo criar build, deploy e automação de uma aplicação FastAPI rodando em Kubernetes usando CI/CD com GitHub Actions e GitOps com ArgoCD, e também usando a gestão do cluster pelo Rancher Desktop, com dois repositorios interligados.
 
@@ -439,7 +439,7 @@ kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.pas
 
 
 ---
-<p align="center">Desenvolvido por Sabrina S2</p>
+<p align="center"><b>Desenvolvido por Sabrina S2</b></p>
 
 
 
