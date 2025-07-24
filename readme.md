@@ -23,8 +23,9 @@ Este projeto tem como objetivo criar build, deploy e automação de uma aplicaç
  - ***Repositório 1***: Vai conter a aplicação FastAPI, o Dockerfile e o GitHub Action Workflow.
  - ***Repositório 2***: Vai conter os manifestos Kubernetes e ArgoCD.
 
-**Precisa também ter uma Chave SSH diretamente vinculada a conta do GitHub**
+***Precisa também ter uma Chave SSH diretamente vinculada a conta do GitHub***
 
+---
 
 ### Repositorio 1 - Etapa 1 – Criar a aplicação FastAPI
 
@@ -49,7 +50,7 @@ async def root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 ```
 
-- Criar o arquivo Dockerfile para containerizar a aplicação.
+- Criar o arquivo Dockerfile para containerizar da aplicação.
 
 ```Dockerfile
 FROM python:3.10-slim
@@ -97,14 +98,14 @@ git push # para enviar tudo pro repositorio remoto
 - `Docker_Username`: O usuario do dockerhub.
 
 - `Docker_Passaword`: Ideial criar um token.
-  - para criar um token, no menu lateral esquerdo vá em `configurações` e depois em `tokens de acesso pessoal`.
+  - Vá no DockerHub, no menu lateral esquerdo vá em `configurações` e depois em `tokens de acesso pessoal` para criar um token.
 
 
 ![](img/docker-tokens.PNG)
 
 
 
-- `Decrição do token de acesso`: escolha uma descrição
+- `Descrição do token de acesso`: escolha uma descrição
 - `Data de validade`: Nenhuma
 - `Permissão de acesso`: Ler, Escrever, apagar
 - Clique em Gerar e adicione esse token no segredo da senha do login
@@ -206,21 +207,14 @@ jobs:
 - Enviar toda alteração para o GitHub
 
 - **Oque esté arquivo faz? ele serva para**:
-
-- Checkout do código.
-
-- Configuração do SSH com chave privada armazenada em segredo (SSH_PRIVATE_KEY) para acessar o repositório fastapi-manifests.
-
-- Login no Docker Hub usando segredos (DOCKER_USERNAME e DOCKER_PASSWORD).
-
-- Build da imagem Docker e push para o Docker Hub.
-
-- Clona o repositório fastapi-manifests.
-
-- Atualiza o arquivo k8s/deployment.yaml com a nova tag da imagem.
-
-- Commit e push da alteração no repositório de manifests.
-
+  - Checkout do código.
+  - Configuração do SSH com chave privada armazenada em segredo (SSH_PRIVATE_KEY) para acessar o repositório fastapi-manifests.
+  - Login no Docker Hub usando segredos (DOCKER_USERNAME e DOCKER_PASSWORD).
+  - Build da imagem Docker e push para o Docker Hub.
+  - Clona o repositório fastapi-manifests.
+  - Atualiza o arquivo k8s/deployment.yaml com a nova tag da imagem.
+  - Commit e push da alteração no repositório de manifests.
+---
 
 ### Repositorio 2 - Etapa 1 – Criar os repositório de manifests Kubernetes
 
@@ -386,6 +380,8 @@ kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.pas
 
 
 
+
+
 ![](img/commit-auto.PNG)
 
 
@@ -393,18 +389,18 @@ kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.pas
 - Build e push da imagem para o DockerHub
 
 
+
 ![](img/build-docker.PNG)
 
 
 
 
-### Teste de aplicação 
+### Teste de aplicação
 
 - Executando aplicação com `port-forward` na porta 80:
 
 
-![](Img/executando-app.PNG)
-
+![](img/executando-app.PNG)
 
 
 
@@ -415,8 +411,8 @@ kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.pas
 
 
 
-
 - Serviços da aplicação:
+
 
 
 ![](img/kube.PNG)
@@ -426,11 +422,16 @@ kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.pas
 - Containers rodando:
 
 
+
 ![](img/containers.PNG)
 
 
 
-- Aplicação rodando no navegador pela a porta 80:
+
+
+- Aplicação rodando no navegador :
+
+
 
 
 ![](img/aplicacao-navegador.PNG)
@@ -438,7 +439,7 @@ kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.pas
 
 
 ---
-
+<p align="center">Desenvolvido por Sabrina S2</p>
 
 
 
