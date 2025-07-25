@@ -29,7 +29,7 @@ Este projeto tem como objetivo criar build, deploy e automação de uma aplicaç
 
 ### Repositorio 1 - Etapa 1 – Criar a aplicação FastAPI
 
-- Criar uma pasta que contém os arquivos e pastas `main.py`, `Dockerfile`, `requirements.txt`, cirar uma pasta templates e o arquivo `html`.
+- Criar uma pasta que contém os arquivos e pastas `main.py`, `Dockerfile`, `requirements.txt`, cirar uma subpasta templates e o arquivo `html`.
 
 - Criar um repositório Git para a aplicação em ssh (`fastapi-app`).
 
