@@ -20,8 +20,8 @@ Este projeto tem como objetivo criar build, deploy e automação de uma aplicaç
 ## Avisos importantes
 
 - **Será necessário criar dois repositórios**: 
- - ***Repositório 1***: Vai conter a aplicação FastAPI, o Dockerfile e o GitHub Action Workflow.
- - ***Repositório 2***: Vai conter os manifestos Kubernetes e ArgoCD.
+   - ***Repositório 1***: Vai conter a aplicação FastAPI, o Dockerfile e o GitHub Action Workflow.
+   - ***Repositório 2***: Vai conter os manifestos Kubernetes e ArgoCD.
 
 ***Precisa também ter uma Chave SSH diretamente vinculada a conta do GitHub***
 
@@ -220,7 +220,7 @@ jobs:
 
 - Criar um repositório Git separado em ssh (`fastapi-manifests`).
 
-- Criar uma pasta fastApi-manifests com subpasta e arquivos, `subpastas k8s`, `deployment.yaml`, `service.yaml` usando o `touch` e o nome do arquivo
+- Criar uma pasta fastApi-manifests com subpasta e arquivos, `subpastas k8s`, `deployment.yaml`, `service.yaml` use o `touch` para criar os arquivos e escolha um nome para cada arquivo.
 
 - Adicionar os arquivos Kubernetes na pasta k8s/:
 
@@ -354,12 +354,12 @@ kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.pas
 
 - Em Desnation:
   - `Cluster URL`: A URL já aparece ao clicar na caixinha.
-  - ``Namespace`: Default.
+  - `Namespace`: Default.
 
 ![](img/argo-config-4.PNG)
 
 
-- ArgoCd já sicronizado com o repostorio e rodando a aplicação.
+- ArgoCD já sicronizado com o repostorio e rodando a aplicação.
 
 ![](img/argo-1.PNG)
 
@@ -439,7 +439,7 @@ kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.pas
 
 
 ---
-<p align="center"><b>Desenvolvido por Sabrina S2</b></p>
+<p align="center"><i>Desenvolvido por Sabrina S2</i></p>
 
 
 
